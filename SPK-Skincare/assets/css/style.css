@@ -1,0 +1,786 @@
+/* CSS Variables */
+:root {
+    --primary-color: #ff69b4;
+    --secondary-color: #ffb6c1;
+    --danger-color: #ff1493;
+    --warning-color: #ffc0cb;
+    --info-color: #ff69b4;
+    --dark-color: #c71585;
+    --light-color: #fdf2f8;
+    --admin-color: #e91e63; /* Warna pink untuk admin */
+    --admin-dark-color: #c2185b; /* Warna pink gelap untuk hover */
+}
+
+/* Style umum */
+body {
+    font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: #fdf2f8;
+}
+
+.bg-gradient-primary {
+    background-color: var(--primary-color);
+    background-image: linear-gradient(180deg, var(--primary-color) 10%, #ff1493 100%);
+}
+
+/* Style untuk card */
+.card {
+    border: none;
+    border-radius: 0.35rem;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+}
+
+.card-header {
+    border-bottom: 1px solid #e3e6f0;
+}
+
+/* Style untuk form */
+.form-control:focus {
+    border-color: #ffb6c1;
+    box-shadow: 0 0 0 0.2rem rgba(255, 105, 180, 0.25);
+}
+
+/* Style untuk tombol */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #ff75be;
+    border-color: #ff75be;
+}
+
+/* Style untuk alert */
+.alert {
+    border-radius: 0.35rem;
+    border: 1px solid transparent;
+}
+
+.alert-success {
+    background-color: #fce7f3;
+    border-color: #f9a8d4;
+    color: #be185d;
+}
+
+.alert-danger {
+    background-color: #fdf2f8;
+    border-color: #fbb6ce;
+    color: #be123c;
+}
+
+/* Style untuk navbar */
+.navbar {
+    background-color: white;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* Style untuk sidebar */
+.sidebar {
+    min-height: 100vh;
+    background-color: var(--primary-color);
+    background-image: linear-gradient(180deg, var(--primary-color) 10%, #ff1493 100%);
+}
+
+.sidebar-heading {
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.sidebar-link {
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 700;
+}
+
+.sidebar-link:hover {
+    color: white;
+}
+
+.sidebar-divider {
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Style untuk tabel */
+.table th {
+    background-color: #f8f9fc;
+}
+
+/* Style untuk produk */
+.product-card {
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-image {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Style untuk halaman profil */
+.skin-type-card {
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.skin-type-card.selected {
+    border: 2px solid var(--primary-color);
+    background-color: rgba(255, 105, 180, 0.1);
+}
+
+.skin-concern-item {
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 0.35rem;
+    transition: all 0.3s;
+}
+
+.skin-concern-item.selected {
+    background-color: rgba(255, 105, 180, 0.1);
+}
+
+/* Style untuk halaman rekomendasi */
+.recommendation-score {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* Style untuk footer - selalu di bawah */
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
+}
+
+footer {
+    background-color: white;
+    border-top: 1px solid #e3e6f0;
+    padding: 1rem 0;
+    margin-top: auto;
+}
+
+/* Style untuk validasi form */
+.is-invalid {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+/* Style untuk landing page */
+.hero-section {
+    background: linear-gradient(135deg, #ffb6c1 0%, #ff69b4 100%);
+    color: white;
+    padding: 120px 0 80px 0;
+    margin-bottom: 40px;
+}
+
+.feature-card {
+    transition: transform 0.3s;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    height: 100%;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Style untuk dashboard user */
+.feature-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.card-dashboard {
+    transition: transform 0.3s;
+    margin-bottom: 20px;
+    height: 100%;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.1);
+}
+
+.card-dashboard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 2rem 0 rgba(58, 59, 69, 0.15);
+}
+
+.welcome-section {
+    background: linear-gradient(135deg, #ffb6c1 0%, #ff69b4 100%);
+    color: white;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 0.5rem 1.5rem 0 rgba(58, 59, 69, 0.2);
+}
+
+.skincare-tip {
+    border-left: 4px solid var(--primary-color);
+    padding-left: 15px;
+    margin-bottom: 20px;
+    transition: transform 0.2s;
+}
+
+.skincare-tip:hover {
+    transform: translateX(5px);
+}
+
+.tip-icon {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-right: 15px;
+}
+
+.section-title {
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.section-title:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--primary-color);
+}
+
+.card-header.bg-primary {
+    background: linear-gradient(90deg, var(--primary-color) 0%, #ff1493 100%) !important;
+    color: white;
+}
+
+.product-card {
+    transition: transform 0.3s;
+    height: 100%;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.badge {
+    font-size: 85%;
+    font-weight: 600;
+    padding: 0.35em 0.65em;
+}
+
+.profile-icon {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    padding: 20px;
+    display: inline-block;
+}
+
+.step-card {
+    background-color: #f8f9fc;
+    border-radius: 10px;
+    padding: 20px;
+    height: 100%;
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0 auto 20px;
+}
+
+.navbar-landing {
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.navbar-landing .navbar-brand {
+    color: white;
+    font-weight: 700;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-landing .navbar-brand img {
+    margin-right: 10px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.navbar-landing .nav-link {
+    color: rgba(255, 255, 255, 0.9);
+    margin-left: 20px;
+    font-weight: 600;
+    transition: all 0.3s;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+.navbar-landing .nav-link:hover {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.navbar-landing .nav-link.btn-primary {
+    color: white;
+    background: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(255, 20, 147, 0.4);
+    margin-left: 25px;
+}
+
+.navbar-landing .nav-link.btn-primary:hover {
+    background: linear-gradient(135deg, #ff1493 0%, #dc143c 100%);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 20, 147, 0.6);
+}
+
+.navbar-toggler {
+    border: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.btn-landing {
+    border-radius: 30px;
+    padding: 10px 25px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+}
+
+.btn-landing:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Style untuk halaman login dan register */
+body.auth-page {
+    background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-container {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.auth-card {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.auth-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.auth-card .card-header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #ff75be 100%);
+    padding: 1.5rem;
+    text-align: center;
+    border-bottom: none;
+}
+
+.auth-card .card-header h4 {
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 0;
+}
+
+.auth-card .card-body {
+    padding: 2.5rem;
+}
+
+.form-group label {
+    font-weight: 400;
+    color: #495057;
+    margin-bottom: 0.5rem;
+}
+
+.form-control {
+    border-radius: 10px;
+    padding: 0.75rem 1.25rem;
+    border: 1px solid #ced4da;
+    background-color: #f8f9fa;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    background-color: #fff;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(255, 105, 180, 0.25);
+}
+
+.input-group {
+    position: relative;
+}
+
+.input-icon {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #6c757d;
+    z-index: 10;
+}
+
+.input-with-icon {
+    padding-left: 45px;
+}
+
+.btn-auth {
+    border-radius: 10px;
+    padding: 0.75rem 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, #ff1493 100%);
+    border: none;
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+    transition: all 0.3s ease;
+}
+
+.btn-auth:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 105, 180, 0.4);
+    background: linear-gradient(135deg, #ff1493 0%, var(--primary-color) 100%);
+}
+
+.auth-footer {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: #6c757d;
+}
+
+.auth-footer a {
+    color: var(--primary-color);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.auth-footer a:hover {
+    color: #ff1493;
+    text-decoration: none;
+}
+
+.brand-logo {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.brand-logo img {
+    height: 80px;
+    margin-bottom: 1rem;
+}
+
+.brand-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.brand-tagline {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #6c757d;
+    z-index: 10;
+}
+
+.auth-alert {
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Navbar styling untuk halaman auth */
+.auth-navbar {
+    background-color: white;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+    padding: 1rem 0;
+}
+
+.auth-navbar .navbar-brand {
+    font-weight: 600;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+}
+
+.auth-navbar .navbar-brand img {
+    margin-right: 10px;
+    height: 40px;
+}
+
+.auth-navbar .nav-item {
+    margin: 0 5px;
+}
+
+.auth-navbar .nav-link {
+    color: var(--dark-color);
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.auth-navbar .nav-link:hover {
+    color: var(--primary-color);
+    background-color: rgba(255, 105, 180, 0.1);
+}
+
+.auth-navbar .nav-link.active {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.auth-navbar .dropdown-menu {
+    border: none;
+    border-radius: 0.35rem;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+}
+
+.auth-navbar .dropdown-item {
+    padding: 0.5rem 1.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.auth-navbar .dropdown-item:hover {
+    background-color: rgba(255, 105, 180, 0.1);
+    color: var(--primary-color);
+}
+
+/* Style untuk tombol admin */
+.btn-admin {
+    background-color: var(--admin-color);
+    border-color: var(--admin-color);
+    color: white;
+}
+
+.btn-admin:hover {
+    background-color: var(--admin-dark-color);
+    border-color: var(--admin-dark-color);
+    color: white;
+}
+
+/* Style untuk card header admin */
+.bg-admin {
+    background-color: var(--admin-color);
+    background-image: linear-gradient(180deg, var(--admin-color) 10%, var(--admin-dark-color) 100%);
+    color: white;
+}
+
+/* Style untuk layout admin */
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.content-wrapper {
+    flex: 1 0 auto;
+    padding-bottom: 30px;
+}
+
+footer {
+    flex-shrink: 0;
+    background-color: var(--admin-dark-color);
+    color: white;
+    margin-top: 0;
+}
+
+/* Style untuk dashboard admin */
+.admin-dashboard {
+    padding: 20px 0;
+}
+
+.admin-welcome {
+    background: linear-gradient(135deg, var(--admin-color) 0%, var(--admin-dark-color) 100%);
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.admin-welcome h2 {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.admin-card {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    height: 100%;
+    border: none;
+}
+
+.admin-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.admin-card .card-body {
+    padding: 25px;
+}
+
+.admin-card .card-footer {
+    padding: 15px 25px;
+    background-color: rgba(0,0,0,0.05);
+}
+
+.admin-card i {
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.admin-card:hover i {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.navbar-dark {
+    background: linear-gradient(90deg, var(--admin-color) 0%, var(--admin-dark-color) 100%);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.navbar-dark .navbar-brand {
+    font-weight: 700;
+    color: white;
+    letter-spacing: 1px;
+}
+
+.navbar-dark .nav-link {
+    color: rgba(255,255,255,0.8) !important;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.navbar-dark .nav-link:hover, 
+.navbar-dark .nav-link.active {
+    color: white !important;
+}
+
+.dropdown-menu {
+    border: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+.dropdown-item {
+    padding: 8px 20px;
+    font-weight: 500;
+}
+
+.dropdown-item:hover {
+    background-color: rgba(0,0,0,0.05);
+}
+.input-icon {
+    color: var(--admin-color) !important; /* Memastikan ikon selalu berwarna ungu */
+}
+
+.auth-page-admin .form-control:focus {
+    background-color: #fff;
+    border-color: var(--admin-color);
+    box-shadow: 0 0 0 0.2rem rgba(233, 30, 99, 0.25); /* Shadow dengan warna admin pink */
+}
+
+.btn-gradient-pink {
+    background: linear-gradient(135deg, #e93a74, #fa5298);
+    border: none;
+    color: white;
+    transition: background 0.3s ease;
+}
+
+.btn-gradient-pink:hover {
+    background: linear-gradient(135deg, #f292b4, #f7b6ce);
+    color: white;
+}
+
+
+/* Styling untuk button group di tabel */
+.btn-group .btn {
+    margin-right: 2px;
+}
+
+.btn-group .btn:last-child {
+    margin-right: 0;
+}
+
+/* Pastikan kolom aksi memiliki lebar yang cukup */
+th:last-child,
+td:last-child {
+    min-width: 120px;
+    text-align: center;
+}
+
+/* Hover effect untuk button */
+.btn-sm:hover {
+    transform: translateY(-1px);
+    transition: all 0.2s ease;
+}
+
+
+
