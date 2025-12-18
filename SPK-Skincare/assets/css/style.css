@@ -443,7 +443,7 @@ body.auth-page {
 
 .form-control {
     border-radius: 10px;
-    padding: 0.75rem 1.25rem;
+    /* padding: 0.75rem 1.25rem; */
     border: 1px solid #ced4da;
     background-color: #f8f9fa;
     transition: all 0.3s ease;
